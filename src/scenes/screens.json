@@ -1,0 +1,428 @@
+[
+  {
+    "serial": 1,
+    "items": [
+      {
+        "type": "svg",
+        "name": "background-almond",
+        "scale": 1.3,
+        "position": {
+          "x": 360,
+          "y": 300
+        },
+        "action": null
+      },
+      {
+        "type": "svg",
+        "name": "floor",
+        "scale": 2,
+        "position": {
+          "x": 340,
+          "y": 600
+        },
+        "action": null
+      },
+      {
+        "type": "svg",
+        "name": "clock-red",
+        "scale": 1,
+        "position": {
+          "x": 560,
+          "y": 100
+        },
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "photo-1",
+        "scale": 0.9,
+        "position": {
+          "x": 160,
+          "y": 90
+        },
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "photo-2",
+        "scale": 0.9,
+        "position": {
+          "x": 360,
+          "y": 90
+        },
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "photo-3",
+        "scale": 0.9,
+        "position": {
+          "x": 250,
+          "y": 160
+        },
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "floor-stripe-blue",
+        "scale": 1.3,
+        "position": {
+          "x": 340,
+          "y": 550
+        },
+        "action": null
+      },
+      {
+        "type": "svg",
+        "name": "sofa-green",
+        "scale": 0.8,
+        "position": {
+          "x": 340,
+          "y": 360
+        },
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "table-brown",
+        "scale": 1.3,
+        "position": {
+          "x": 340,
+          "y": 450
+        },
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "flower-in-pot",
+        "scale": 1,
+        "position": {
+          "x": 440,
+          "y": 302
+        },
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "treasure-box",
+        "scale": 0.4,
+        "position": {
+          "x": 220,
+          "y": 370
+        },
+        "action": true
+      }
+    ]
+  },
+  {
+    "serial": 2,
+    "items": [
+      {
+        "type": "svg",
+        "name": "background-mat-green",
+        "position": {
+          "x": 360,
+          "y": 300
+        },
+        "scale": 1.3,
+        "action": null
+      },
+      {
+        "type": "svg",
+        "name": "floor-mat-green",
+        "position": {
+          "x": 560,
+          "y": 520
+        },
+        "scale": 1,
+        "action": null
+      },
+      {
+        "type": "svg",
+        "name": "key-yellow-2",
+        "position": {
+          "x": 360,
+          "y": 300
+        },
+        "scale": 0.3,
+        "action": [
+          {
+            "event": "pointerdown",
+            "type": "custom",
+            "actionOnObject": {
+              "setScale": 0.5,
+              "setX": 60,
+              "setY": 500
+            },
+            "isCollectible": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "serial": 3,
+    "items": [
+      {
+        "type": "svg",
+        "name": "book-blue-shade",
+        "scale": 50,
+        "position": {
+          "x": 360,
+          "y": 300
+        },
+        "action": null
+      },
+      {
+        "type": "svg",
+        "name": "floor-stripe-blue",
+        "scale": 2,
+        "position": {
+          "x": 340,
+          "y": 600
+        },
+        "action": null
+      },
+      {
+        "type": "svg",
+        "name": "clock-blue",
+        "scale": 1,
+        "position": {
+          "x": 660,
+          "y": 50
+        },
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "notice-board",
+        "scale": 0.7,
+        "position": {
+          "x": 560,
+          "y": 160
+        },
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "stick-note",
+        "position": {
+          "x": 360,
+          "y": 250
+        },
+        "scale": 0.7,
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "photo-frame-1",
+        "position": {
+          "x": 360,
+          "y": 50
+        },
+        "scale": 1,
+        "action": {
+          "type": "addToCollection"
+        }
+      },
+      {
+        "type": "svg",
+        "name": "monitor-blue",
+        "position": {
+          "x": 240,
+          "y": 303
+        },
+        "scale": 0.8,
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "book-red",
+        "position": {
+          "x": 530,
+          "y": 340
+        },
+        "scale": 1,
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "block-white",
+        "position": {
+          "x": 260,
+          "y": 160
+        },
+        "scale": 1,
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "arc-lamp",
+        "position": {
+          "x": 70,
+          "y": 70
+        },
+        "scale": 1,
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "table-white",
+        "position": {
+          "x": 360,
+          "y": 420
+        },
+        "scale": 0.5,
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "plant-pot",
+        "position": {
+          "x": 600,
+          "y": 460
+        },
+        "scale": 0.6,
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "chair-blue-1",
+        "position": {
+          "x": 480,
+          "y": 350
+        },
+        "scale": 0.8,
+        "action": true
+      },
+      {
+        "type": "svg",
+        "name": "power-socket",
+        "position": {
+          "x": 180,
+          "y": 420
+        },
+        "scale": 0.7,
+        "action": true
+      }
+    ]
+  },
+  {
+    "serial": 4,
+    "items": [
+      {
+        "type": "svg",
+        "name": "background-mat-green",
+        "scale": 2,
+        "position": {
+          "x": 360,
+          "y": 300
+        },
+        "action": null
+      },
+      {
+        "type": "svg",
+        "name": "floor-mat-green",
+        "scale": 2,
+        "position": {
+          "x": 340,
+          "y": 600
+        },
+        "action": null
+      },
+      {
+        "type": "svg",
+        "name": "empty-cupboard",
+        "position": {
+          "x": 300,
+          "y": 280
+        },
+        "scale": 0.7,
+        "action": null
+      },
+      {
+        "type": "svg",
+        "name": "white-drawer",
+        "position": {
+          "x": 107,
+          "y": 284
+        },
+        "scale": 0.7,
+        "action": {
+          "type": "open-drawer"
+        }
+      },
+      {
+        "type": "svg",
+        "name": "white-drawer",
+        "position": {
+          "x": 107,
+          "y": 324
+        },
+        "scale": 0.7,
+        "action": {
+          "type": "open-drawer"
+        }
+      },
+      {
+        "type": "svg",
+        "name": "white-drawer",
+        "position": {
+          "x": 107,
+          "y": 364
+        },
+        "scale": 0.7,
+        "action": {
+          "type": "open-drawer"
+        }
+      },
+      {
+        "type": "svg",
+        "name": "white-drawer",
+        "position": {
+          "x": 107,
+          "y": 404
+        },
+        "scale": 0.7,
+        "action": {
+          "type": "open-drawer"
+        }
+      }
+    ]
+  },
+  {
+    "serial": 5,
+    "items": [
+      {
+        "type": "svg",
+        "name": "background-almond",
+        "scale": 2,
+        "position": {
+          "x": 360,
+          "y": 300
+        },
+        "action": null
+      },
+      {
+        "type": "svg",
+        "name": "floor-mat-green",
+        "scale": 2,
+        "position": {
+          "x": 340,
+          "y": 600
+        },
+        "action": null
+      },
+      {
+        "type": "svg",
+        "name": "door",
+        "position": {
+          "x": 450,
+          "y": 335
+        },
+        "scale": 2.5,
+        "action": true
+      }
+    ]
+  }
+]

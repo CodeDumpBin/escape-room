@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="4.6376162mm"
+   height="17.110069mm"
+   viewBox="0 0 4.6376162 17.110069"
+   version="1.1"
+   id="svg46858"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="book-blue-2.svg">
+  <defs
+     id="defs46852" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="27.335427"
+     inkscape:cy="155.19113"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="704"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata46855">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(40.116427,-172.78425)">
+    <path
+       inkscape:connector-curvature="0"
+       id="path20438"
+       style="fill:#717ec3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.03527778"
+       d="m -35.478811,189.89432 h -4.637616 v -17.11007 h 4.637616 v 17.11007" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path20522"
+       style="fill:#9ab6e4;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.03527778"
+       d="m -37.317841,179.13425 h -1.411111 v -3.26884 h 1.411111 v 3.26884" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path20524"
+       style="fill:#9ab6e4;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.03527778"
+       d="m -37.317841,183.4138 h -1.411111 v -3.26849 h 1.411111 v 3.26849" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path20526"
+       style="fill:#9ab6e4;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.03527778"
+       d="m -37.317841,187.6937 h -1.411111 v -3.26849 h 1.411111 v 3.26849" />
+  </g>
+</svg>

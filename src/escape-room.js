@@ -8,6 +8,8 @@ import Constants from "./constants.js"
 export default new Phaser.Game({
   type: Phaser.AUTO,
   width: Constants.WIDTH,
+  
+  
   pixelArt: true,
   //  * Constants.DEVICE_PIXEL_RATIO,
   height: Constants.HEIGHT,
