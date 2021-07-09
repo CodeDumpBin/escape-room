@@ -1,0 +1,37 @@
+{
+  "type": "svg",
+  "name": "key-yellow-2",
+  "position": {
+    "x": 360,
+    "y": 300
+  },
+  "scale": 0.3,
+  "setDepth": 1,
+  "action": [
+    {
+      "event": "pointerdown",
+      "sound": "audio_collect",
+      "type": "custom",
+      "actionOnObject": {
+        "setScale": 0.3,
+        "setX": 60,
+        "setY": 540
+      },
+      "isCollectible": true
+    },
+    {
+      "event": "pointerover",
+      "type": "custom",
+      "actionOnObject": {
+        "setTint": 0xf0ff00,
+      },
+    },
+    {
+      "event": "pointerout",
+      "type": "custom",
+      "actionOnObject": {
+        "setTint": 0xffffff,
+      },
+    }
+  ]
+}

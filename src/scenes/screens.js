@@ -1,6 +1,7 @@
 export default {
   assets: {
     image: [
+      { "name": 'button-start', "url": 'assets/svg/button-start.svg' },
       { "name": 'arc-lamp', "url": 'assets/svg/arc-lamp.svg' },
       { "name": 'arrow-blue', "url": 'assets/svg/arrow-blue.svg' },
       { "name": 'arrow-green', "url": 'assets/svg/arrow-green.svg' },
@@ -84,7 +85,7 @@ export default {
       { "name": 'audio_collect', "url": 'assets/collect.mp3' },
       { "name": 'audio_drawopen', "url": 'assets/drawopen.mp3' },
       { "name": 'audio_numchange', "url": 'assets/numchange.mp3' }
-    ]
+    ],
   },
   screens:
     [
@@ -119,7 +120,23 @@ export default {
               "x": 560,
               "y": 100
             },
-            "action": true
+            "action": [
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              },
+
+            ]
           },
           {
             "type": "svg",
@@ -129,7 +146,23 @@ export default {
               "x": 160,
               "y": 90
             },
-            "action": true
+            "action": [
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              },
+
+            ]
           },
           {
             "type": "svg",
@@ -139,7 +172,23 @@ export default {
               "x": 360,
               "y": 90
             },
-            "action": true
+            "action": [
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              },
+
+            ]
           },
           {
             "type": "svg",
@@ -149,7 +198,23 @@ export default {
               "x": 250,
               "y": 160
             },
-            "action": true
+            "action": [
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              },
+
+            ]
           },
           {
             "type": "svg",
@@ -169,7 +234,23 @@ export default {
               "x": 340,
               "y": 360
             },
-            "action": true
+            "action": [
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf000ff,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              },
+
+            ]
           },
           {
             "type": "svg",
@@ -179,7 +260,23 @@ export default {
               "x": 340,
               "y": 450
             },
-            "action": true
+            "action": [
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              },
+
+            ]
           },
           {
             "type": "svg",
@@ -189,7 +286,23 @@ export default {
               "x": 440,
               "y": 302
             },
-            "action": true
+            "action": [
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              },
+
+            ]
           },
           {
             "type": "svg",
@@ -199,8 +312,61 @@ export default {
               "x": 220,
               "y": 370
             },
-            "action": true
-          }
+            "action": [
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              },
+
+            ]
+          },
+          {
+            "type": "svg",
+            "name": "key-yellow-2",
+            "position": {
+              "x": 360,
+              "y": 300
+            },
+            "scale": 0.3,
+            "setDepth": 1,
+            "action": [
+              {
+                "event": "pointerdown",
+                "sound": "audio_collect",
+                "type": "custom",
+                "actionOnObject": {
+                  "setScale": 0.2,
+                  "setX": 60,
+                  "setY": 550
+                },
+                "isCollectible": true
+              },
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              }
+            ]
+          }          
         ],
         "alpha": 1,
       },
@@ -236,16 +402,32 @@ export default {
               "y": 300
             },
             "scale": 0.3,
+            "setDepth": 1,
             "action": [
               {
                 "event": "pointerdown",
+                "sound": "audio_collect",
                 "type": "custom",
                 "actionOnObject": {
-                  "setScale": 0.5,
-                  "setX": 60,
-                  "setY": 500
+                  "setScale": 0.2,
+                  "setX": 160,
+                  "setY": 550
                 },
                 "isCollectible": true
+              },
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
               }
             ]
           }
@@ -396,7 +578,44 @@ export default {
             },
             "scale": 0.7,
             "action": true
-          }
+          },
+          {
+            "type": "svg",
+            "name": "key-yellow-2",
+            "position": {
+              "x": 380,
+              "y": 300
+            },
+            "scale": 0.3,
+            "setDepth": 1,
+            "action": [
+              {
+                "event": "pointerdown",
+                "sound": "audio_collect",
+                "type": "custom",
+                "actionOnObject": {
+                  "setScale": 0.2,
+                  "setX": 260,
+                  "setY": 550
+                },
+                "isCollectible": true
+              },
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              }
+            ]
+          }          
         ]
       },
       {
@@ -441,9 +660,38 @@ export default {
               "y": 284
             },
             "scale": 0.7,
-            "action": {
-              "type": "open-drawer"
-            }
+            "action": [
+
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              },
+              {
+                "event": "pointerdown",
+                "type": "toggle",
+                "isToggled": false,
+                "sound": "audio_button",
+                "actionOnObject": {
+                  "setTexture": 'white-drawer-open',
+                },
+                "toggleActionOnObject": {
+                  "setTexture": 'white-drawer',
+                },
+              },
+
+
+
+            ]
           },
           {
             "type": "svg",
@@ -453,9 +701,35 @@ export default {
               "y": 324
             },
             "scale": 0.7,
-            "action": {
-              "type": "open-drawer"
-            }
+            "action": [
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              },
+              {
+                "event": "pointerdown",
+                "type": "toggle",
+                "isToggled": false,
+                "sound": "audio_button",
+                "actionOnObject": {
+                  "setTexture": 'white-drawer-open',
+                },
+                "toggleActionOnObject": {
+                  "setTexture": 'white-drawer',
+                },
+              },
+
+            ]
           },
           {
             "type": "svg",
@@ -465,9 +739,37 @@ export default {
               "y": 364
             },
             "scale": 0.7,
-            "action": {
-              "type": "open-drawer"
-            }
+            "action": [
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              },
+              {
+                "event": "pointerdown",
+                "type": "toggle",
+                "isToggled": false,
+                "sound": "audio_button",
+                "actionOnObject": {
+                  "setTexture": 'white-drawer-open',
+                },
+                "toggleActionOnObject": {
+                  "setTexture": 'white-drawer',
+                },
+              }
+
+                           
+
+            ]
           },
           {
             "type": "svg",
@@ -477,10 +779,72 @@ export default {
               "y": 404
             },
             "scale": 0.7,
-            "action": {
-              "type": "open-drawer"
-            }
-          }
+            "action": [
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              },
+              {
+                "event": "pointerdown",
+                "type": "toggle",
+                "isToggled": false,
+                "sound": "audio_button",
+                "actionOnObject": {
+                  "setTexture": 'white-drawer-open',
+                },
+                "toggleActionOnObject": {
+                  "setTexture": 'white-drawer',
+                },
+              },
+            ]
+          },
+          {
+            "type": "svg",
+            "name": "key-yellow-2",
+            "position": {
+              "x": 400,
+              "y": 300
+            },
+            "scale": 0.3,
+            "setDepth": 1,
+            "action": [
+              {
+                "event": "pointerdown",
+                "sound": "audio_collect",
+                "type": "custom",
+                "actionOnObject": {
+                  "setScale": 0.2,
+                  "setX": 360,
+                  "setY": 550
+                },
+                "isCollectible": true
+              },
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              }
+            ]
+          }          
         ]
       },
       {
@@ -516,10 +880,113 @@ export default {
             },
             "scale": 2.5,
             "action": true
+          },
+          {
+            "type": "svg",
+            "name": "key-yellow-2",
+            "position": {
+              "x": 420,
+              "y": 300
+            },
+            "scale": 0.3,
+            "setDepth": 1,
+            "action": [
+              {
+                "event": "pointerdown",
+                "sound": "audio_collect",
+                "type": "custom",
+                "actionOnObject": {
+                  "setScale": 0.2,
+                  "setX": 460,
+                  "setY": 550
+                },
+                "isCollectible": true
+              },
+              {
+                "event": "pointerover",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xf0ff00,
+                },
+              },
+              {
+                "event": "pointerout",
+                "type": "custom",
+                "actionOnObject": {
+                  "setTint": 0xffffff,
+                },
+              }
+            ]
           }
         ]
       }
     ],
-  itemsToCollect: ['key', 'pen', 'ball', 'bulb'],
+  commonScreen: [
+    {
+      type: "rectangle",
+      details: {
+        "x": 60,
+        "y": 554,
+        "width": 88,
+        "height": 88,
+        "background": 0x444444,
+        "attributes": {
+          "setStrokeStyle": {
+            "width": 4,
+            "color": 0xefc53f
+          }
+        }
+      }
+    },
+    {
+      type: "rectangle",
+      details: {
+        "x": 90,
+        "y": 554,
+        "width": 88,
+        "height": 88,
+        "background": 0x444444,
+        "attributes": {
+          "setStrokeStyle": {
+            "width": 4,
+            "color": 0xefc53f
+          }
+        }
+      }
+    },
+    {
+      type: "rectangle",
+      details: {
+        "x": 120,
+        "y": 554,
+        "width": 88,
+        "height": 88,
+        "background": 0x444444,
+        "attributes": {
+          "setStrokeStyle": {
+            "width": 4,
+            "color": 0xefc53f
+          }
+        }
+      }
+    },
+    {
+      type: "rectangle",
+      details: {
+        "x": 180,
+        "y": 554,
+        "width": 88,
+        "height": 88,
+        "background": 0x444444,
+        "attributes": {
+          "setStrokeStyle": {
+            "width": 4,
+            "color": 0xefc53f
+          }
+        }
+      }
+    }
+  ],
+  itemsToCollect: ['key-yellow-2', 'key-yellow-2', 'key-yellow-2', 'key-yellow-2','key-yellow-2'],
 }
 

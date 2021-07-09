@@ -1,36 +1,37 @@
-import Phaser from "../phaser.js"
 import screenGameData from "./screens.js"
+import Phaser from "../phaser.js"
 
 
 export default class Room1 extends Phaser.Scene {
 
   constructor() {
-    super('room1')
+    super('Room1')
     this.box = [];
     this.collectibles = new Array(5);
     this.pages = 5;
     this.game_screens = new Array(5);
-    this.page1 = null;
     this.collectedItems = null
     this.gameData = {
       itemsToCollect: screenGameData.itemsToCollect,
       itemsCollected: [],
       gameAssets: screenGameData.assets,
       screens: screenGameData.screens,
+      commonScreen: screenGameData.commonScreen,
       gameState: "playing"
     }
   }
 
   preload() {
-    let imageList = this.gameData.gameAssets.image
-    let audioList = this.gameData.gameAssets.sound
-    for (let i = 0; i < imageList.length; i++) {
-      this.load.svg(imageList[i].name, imageList[i].url)
-    }
+    // let imageList = this.gameData.gameAssets.image
+    // let audioList = this.gameData.gameAssets.sound
+    // for (let i = 0; i < imageList.length; i++) {
+    //   this.load.svg(imageList[i].name, imageList[i].url)
+    // }
 
-    for (let i = 0; i < audioList.length; i++) {
-      this.load.audio(audioList[i].name, audioList[i].url)
-    }
+    // for (let i = 0; i < audioList.length; i++) {
+    //   this.load.audio(audioList[i].name, audioList[i].url)
+    // }
+    console.log("*************************AAAAAAAAAAAAAAA**************")
   }
 
   create() {
@@ -43,9 +44,49 @@ export default class Room1 extends Phaser.Scene {
       })
     }
     this.collectedItems = this.add.container(0, 0)
+    // let commonScreen = this.gameData.commonScreen;
+    // collectionBoard
+
     for (var c = 0; c < this.collectibles.length; c++) {
       this.collectedItems.add(this.makeCollectionBoard(c))
     }
+
+
+    let g = this.add.graphics(100, 100);
+    // g.drawRect(100, 100, 300, 400)
+    // g.beginFill(0xefc53f, 1);
+
+    // let modal = this.add.container(0, 0);
+    g.fillStyle(0xffb000, 1);
+    g.fillRect(450, 200, 200, 200);
+    let rect = new Phaser.Geom.Rectangle(450, 200, 200, 200);
+    g.setInteractive(rect, Phaser.Geom.Rectangle.Contains)
+
+    // 
+    g.on('pointerover', function () { g.alpha = 0.5; });
+    g.on('pointerout', function () { g.alpha = 1.0; });
+    g.on('pointerdown', function () { 
+      
+     });
+    // var r2 = this.add.rectangle(200, 200, 400, 400, 0x9966ff);
+    // console.log(r2);
+    // r2.setInteractive(true);
+    // r2.setStrokeStyle(4, 0xefc53f);
+    // r2.on('pointerover', function (pointer, x, y, event) {
+    //   // console.log("aaaaa",r2);
+    //   // r2.setTint(0xf0ff00);
+    // }, this)
+    // r2.on('pointerout', function (pointer, x, y, event) { 
+
+    // }, this)
+    // r2.on('pointerdown', function (pointer, x, y, event) {
+    //   // this.sound.play('audio_button')
+    //   // this.scene.start('Room1');
+    // }, this);
+
+
+    // var r3 = this.add.rectangle(0, 0, 400, 400);
+    // modal.add(r2);
   }
 
   /**
@@ -60,17 +101,12 @@ export default class Room1 extends Phaser.Scene {
     for (let s = 0; s < param.screenData.length; s++) {
       if (param.screenData[s].type === "image" || param.screenData[s].type === "svg") {
         let obj = this.addObjectToScreen(param.screenData[s])
+
         screen.add(obj);
       }
     }
     this.navigateBetweenScreen(param.screenNumber, screen)
   }
-
-
-
-
-
-
 
 
   addToItemsCollected(item) {
@@ -82,7 +118,6 @@ export default class Room1 extends Phaser.Scene {
         this.gameData.gameState = "completed"
       }
     }
-
   }
 
   checkGameFinished() {
@@ -91,6 +126,7 @@ export default class Room1 extends Phaser.Scene {
       return _res;
     }
     for (let i = 0; i < this.gameData.itemsToCollect.length; i++) {
+      console.log(this.gameData.itemsCollected, this.gameData.itemsToCollect);
       if (!this.gameData.itemsCollected.includes(this.gameData.itemsToCollect[i]))
         return _res;
     }
@@ -100,53 +136,44 @@ export default class Room1 extends Phaser.Scene {
 
   addObjectToScreen(data) {
     let obj = this.add.image(data.position.x, data.position.y, data.name).setScale(data.scale)
-    // action
-    console.log(Array.isArray(data.action), data.action);
     if (data.action !== null && Array.isArray(data.action)) {
+
+      obj.setInteractive()
+      if (data.setDepth) {
+        obj.setDepth(data.setDepth)
+      }
       for (let a = 0; a < data.action.length; a++) {
         let _dAction = data.action[a];
         obj.on(_dAction.event, function (ele) {
-          this.soundOpen();
-          // Object.ene
+          // actionOnObject are the default event with default phaser properties  
+          if (_dAction.sound) this.playSound(_dAction.sound)
 
-          // obj.
+          if (_dAction.actionOnObject) {
+
+            for (let actionEle in _dAction.isToggled ? _dAction.toggleActionOnObject : _dAction.actionOnObject) {
+              obj[actionEle](_dAction.isToggled ? _dAction.toggleActionOnObject[actionEle] : _dAction.actionOnObject[actionEle])
+            }
+            if (_dAction.type === "toggle") {
+              _dAction.isToggled = !_dAction.isToggled;
+            }
+          }
+          if (_dAction.isCollectible) {
+            // console.log(".cccccccc.....",obj);
+            this.collectedItems.add(obj)
+            // console.log(obj.texture.key);
+            obj.texture.key
+            this.gameData.itemsCollected.push(obj.texture.key);
+            _dAction.isCollectible = false;
+            // console.log(this.gameData.itemsCollected);
+            // console.log(this.gameData.itemsToCollect);
+            if (this.checkGameFinished()) {
+              this.scene.start('finish');
+            }
+          }
         }, this)
 
       }
       console.log('array action.......');
-    }
-    else if (data.action !== null && data.action.type && data.action.type == "addToCollection") {
-      obj.setInteractive()
-      obj.on('pointerover', function () { obj.setTint(0xf0ff00); }, this)
-      obj.on('pointerout', function () { obj.setTint(0xffffff); }, this)
-      obj.setDepth(1);
-      obj.on('pointerdown', function (ele) {
-        this.soundOpen();
-        obj.setScale(0.8)
-        obj.setX(160)
-        obj.setY(550)
-        this.collectedItems.add(obj)
-        this.addToItemsCollected(obj.texture.obj)
-      }, this);
-    } else if (data.action !== null && data.action.type && data.action.type == "open-drawer") {
-      obj.setInteractive()
-      obj.on('pointerover', function () { obj.setTint(0xf0ff00); }, this)
-      obj.on('pointerout', function () { obj.setTint(0xffffff); }, this)
-      obj.setDepth(1);
-      obj.on('pointerdown', function (ele) {
-        this.soundOpen();
-        obj.setTexture(obj.texture.key === 'white-drawer' ? 'white-drawer-open' : 'white-drawer')
-      }, this);
-    }
-
-
-    else if (data.action !== null) {
-      obj.setInteractive()
-      obj.on('pointerover', function () { obj.setTint(0xf0ff00); }, this)
-      obj.on('pointerout', function () { obj.setTint(0xffffff); }, this)
-      obj.on('pointerdown', function () {
-        this.soundOpen();
-      }, this);
     }
     return obj;
   }
@@ -166,18 +193,6 @@ export default class Room1 extends Phaser.Scene {
   }
 
 
-  makeBox(position, container) {
-    let box = this.add.image(position.x, position.y, 'box').setScrollFactor(1, 0).setScale(1)
-    box.setInteractive()
-    box.on('pointerover', function () { box.setTint(0xf0ff00); }, this)
-    box.on('pointerout', function () { box.setTint(0xffffff); }, this)
-    box.on('pointerdown', function () {
-      console.log(this.collectedItems)
-      this.soundOpen();
-      box.setTexture('box-open')
-    }, this);
-    container.add(box)
-  }
 
   makeCollectionBoard(c) {
     let cb = this.add.rectangle(60 + (c * 100), 554, 88, 88, 0x444444);
@@ -187,6 +202,11 @@ export default class Room1 extends Phaser.Scene {
 
   soundOpen() {
     this.sound.play('audio_button')
+  }
+
+
+  playSound(sound) {
+    this.sound.play(sound)
   }
 
   arrow(direction, screen, container) {

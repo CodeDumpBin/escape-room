@@ -4,71 +4,15 @@ import Constants from "../constants.js"
 
 export default class Start extends Phaser.Scene {
   constructor() {
-    super("start");
-    this.gameData = {
-      itemsToCollect: screenGameData.itemsToCollect,
-      itemsCollected: [],
-      gameAssets: screenGameData.assets,
-      screens: screenGameData.screens,
-      commonScreen: screenGameData.commonScreen,
-      gameState: "playing"
-    }
+    super("finish");
   }
 
   preload() {
     this.cameras.main.backgroundColor.setTo(241, 201, 140)
     var width = this.cameras.main.width;
     var height = this.cameras.main.height;
-    var progressBar = this.add.graphics();
-    var progressBox = this.add.graphics();
-    progressBox.fillStyle(0x222222, 0.8);
-    var progressIndicatorStartAt = (width - 320) / 2
-    progressBox.fillRect(progressIndicatorStartAt, 270, 320, 50);
-    var loadingText = this.make.text({ x: width / 2, y: height / 2 - 50, text: 'Loading...', style: { font: '13px monospace', fill: '#D83A56' } });
-    loadingText.setOrigin(0.5, 0.5);
-    var percentText = this.make.text({ x: width / 2, y: height / 2 - 5, text: '0%', style: { font: '13px monospace', fill: '#ffffff' } });
-    percentText.setOrigin(0.5, 0.5);
-
-
-
-    let imageList = this.gameData.gameAssets.image
-    let audioList = this.gameData.gameAssets.sound
-    for (let i = 0; i < imageList.length; i++) {
-      this.load.svg(imageList[i].name, imageList[i].url)
-    }
-
-    for (let i = 0; i < audioList.length; i++) {
-      this.load.audio(audioList[i].name, audioList[i].url)
-    }
-
-
-
-
-
-
-
-
-
-    this.load.on('progress', function (value) {
-      progressBar.clear();
-      progressBar.fillStyle(0xffffff, 1);
-      progressBar.fillRect(progressIndicatorStartAt + 10, 280, 301 * value, 30);
-      percentText.setText(parseInt(value * 100) + '%');
-    })
-
-    this.load.on('fileprogress', function (file) {
-      // console.log("file.....", file);
-    })
-
-    this.load.on('complete', function () {
-      console.log("..complete....");
-      progressBar.destroy();
-      progressBox.destroy();
-      loadingText.destroy();
-      percentText.destroy();
-      // this.scene.start('Room1');
-    }, this)
-
+    // progressBox.fillRect(progressIndicatorStartAt, 270, 320, 50);
+    var loadingText = this.make.text({ x: (width - 140) / 2, y: height / 2 - 50, text: 'Game Finished', style: { font: '18px monospace', fill: '#D83A56' } });
 
   }
 
@@ -82,8 +26,8 @@ export default class Start extends Phaser.Scene {
     play.on('pointerover', function () { play.setTint(0xf0ff00); }, this)
     play.on('pointerout', function () { play.setTint(0xffffff); }, this)
     play.on('pointerdown', function (ele) {
-      this.sound.play('audio_button')
-      this.scene.start('Room1');
+      // this.sound.play('audio_button')
+      this.scene.start('start');
     }, this);
 
 
